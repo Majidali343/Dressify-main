@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2024 at 08:16 PM
+-- Generation Time: May 16, 2024 at 05:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -171,9 +171,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `parent_id`, `section_id`, `category_name`, `category_image`, `category_discount`, `description`, `url`, `meta_title`, `meta_description`, `meta_keywords`, `status`, `created_at`, `updated_at`) VALUES
-(1, 0, 1, 'Men', '', 0.00, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 'men', NULL, NULL, NULL, 1, NULL, '2022-09-29 14:47:51'),
+(1, 0, 1, 'Men', '', 0.00, 'Amazing Men variety ', 'men', NULL, NULL, NULL, 1, NULL, '2022-09-29 14:47:51'),
 (2, 0, 1, 'Women', '', 0.00, '', 'women', '', '', '', 1, NULL, '2022-08-20 22:38:56'),
-(6, 1, 1, 'T-Shirts', '', 0.00, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 'tshirts', 'Men T-shirts', 'Huge variety of men t-shirts', 'men t-shirts, cotton t-shirts', 1, '2022-08-24 17:58:46', '2023-05-05 18:32:28'),
+(6, 1, 1, 'T-Shirts', '', 0.00, 'Amazing Tshirts', 'tshirts', 'Men T-shirts', 'Huge variety of men t-shirts', 'men t-shirts, cotton t-shirts', 1, '2022-08-24 17:58:46', '2023-05-05 18:32:28'),
 (7, 1, 1, 'Shirts', '', 0.00, NULL, 'shirts', NULL, NULL, NULL, 1, '2022-08-25 00:09:23', '2022-08-25 00:09:51'),
 (8, 2, 1, 'Langha', '', 0.00, NULL, 'langha', NULL, NULL, NULL, 1, '2022-08-25 00:17:42', '2024-02-06 02:38:44');
 
@@ -2072,7 +2072,10 @@ INSERT INTO `recently_viewed_products` (`id`, `product_id`, `session_id`, `creat
 (166, 13, '140f6aa5c405eb7943f0efdfe42f068b', NULL, NULL),
 (167, 18, 'ba2d71431dc1a0f7311f3bc1f5493a55', NULL, NULL),
 (168, 18, 'a7fee053c7d6a6b444e48deb4bf44cb5', NULL, NULL),
-(169, 17, 'a7fee053c7d6a6b444e48deb4bf44cb5', NULL, NULL);
+(169, 17, 'a7fee053c7d6a6b444e48deb4bf44cb5', NULL, NULL),
+(170, 19, '6dec301b58f469195b9854bdb2a48187', NULL, NULL),
+(171, 11, 'cfefca64a5a3b36cb51c9247c776dade', NULL, NULL),
+(172, 16, 'cfefca64a5a3b36cb51c9247c776dade', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2866,7 +2869,7 @@ ALTER TABLE `ratings`
 -- AUTO_INCREMENT for table `recently_viewed_products`
 --
 ALTER TABLE `recently_viewed_products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
 --
 -- AUTO_INCREMENT for table `users`
