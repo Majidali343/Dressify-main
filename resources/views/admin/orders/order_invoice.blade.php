@@ -48,7 +48,7 @@
                         {{ $userDetails['mobile'] }}<br>
     				</address>
     			</div>
-    			<div class="col-xs-6 text-right">
+    			<div class="text-right col-xs-6">
     				<address>
         			    <strong>Shipped To:</strong><br>
                         {{ $orderDetails['name'] }}<br>
@@ -66,7 +66,7 @@
                         {{ $orderDetails['payment_method'] }}
     				</address>
     			</div>
-    			<div class="col-xs-6 text-right">
+    			<div class="text-right col-xs-6">
     				<address>
     					<strong>Order Date:</strong><br>
     					{{ date('Y-m-d h:i:s', strtotime($orderDetails['created_at'])) }}<br><br>
@@ -116,9 +116,9 @@
                                         </td>
                                         <td class="text-center">{{ $product['product_size'] }}</td>
                                         <td class="text-center">{{ $product['product_color'] }}</td>
-                                        <td class="text-center">INR {{ $product['product_price'] }}</td>
+                                        <td class="text-center">PKR {{ $product['product_price'] }}</td>
                                         <td class="text-center">{{ $product['product_qty'] }}</td>
-                                        <td class="text-right">INR {{ $product['product_price'] * $product['product_qty'] }}</td>
+                                        <td class="text-right">PKR {{ $product['product_price'] * $product['product_qty'] }}</td>
                                     </tr>
 
                                     {{-- Continue: Calculate the Subtotal --}}
@@ -132,25 +132,25 @@
                                     <td class="thick-line"></td>
                                     <td class="thick-line"></td>
                                     <td class="thick-line"></td>
-                                    <td class="thick-line text-right"><strong>Subtotal</strong></td>
-                                    <td class="thick-line text-right">INR {{ $subTotal }}</td>
+                                    <td class="text-right thick-line"><strong>Subtotal</strong></td>
+                                    <td class="text-right thick-line">PKR {{ $subTotal }}</td>
                                 </tr>
                                 <tr>
                                     <td class="no-line"></td>
                                     <td class="no-line"></td>
                                     <td class="no-line"></td>
                                     <td class="no-line"></td>
-                                    <td class="no-line text-right"><strong>Shipping Charges</strong></td>
-                                    <td class="no-line text-right">INR 0</td>
+                                    <td class="text-right no-line"><strong>Shipping Charges</strong></td>
+                                    <td class="text-right no-line">PKR 0</td>
                                 </tr>
                                 <tr>
                                     <td class="no-line"></td>
                                     <td class="no-line"></td>
                                     <td class="no-line"></td>
                                     <td class="no-line"></td>
-                                    <td class="no-line text-right"><strong>Grand Total</strong></td>
-                                    <td class="no-line text-right">
-                                        <strong>INR {{ $orderDetails['grand_total'] }}</strong>
+                                    <td class="text-right no-line"><strong>Grand Total</strong></td>
+                                    <td class="text-right no-line">
+                                        <strong>PKR {{ $orderDetails['grand_total'] }}</strong>
                                         <br>
 
                                         @if ($orderDetails['payment_method'] == 'COD')

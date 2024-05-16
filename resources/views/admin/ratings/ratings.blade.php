@@ -80,7 +80,7 @@
                                         </thead>
                                         <tbody>
                                          
-                                        // @foreach ($ratings as $rating)
+                                         @foreach ($ratings as $rating)
                                                 <tr>
                                                     <td>{{ $rating['id'] }}</td>
                                                     <td>
@@ -88,7 +88,7 @@
                                                             href="{{ url('product/' . $rating['product_id']) }}">
                                                             {{ $rating['product']['product_name'] }}
                                                         </a>
-                                                    </td>//
+                                                    </td>
 
 
                                                 
@@ -126,7 +126,7 @@
                                                     </a> --}}
                                                     </td>
                                                 </tr>
-                                            @endforeach//
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

@@ -369,21 +369,21 @@
                     <div class="detail-tabs-wrapper u-s-p-t-80">
                         <div class="detail-nav-wrapper u-s-m-b-30">
                             <ul class="nav single-product-nav justify-content-center">
-                                <li class="nav-item">
+                                {{-- <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab" href="#video">Product Video</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#detail">Product Details</a>
-                                </li>
+                                </li> --}}
+                                {{-- <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#detail">Product Details</a>
+                                </li> --}}
                                 <li class="nav-item">
                                     {{-- <a class="nav-link" data-toggle="tab" href="#review">Reviews (15)</a> --}}
-                                    <a class="nav-link" data-toggle="tab" href="#review">Reviews {{ count($ratings) }}</a>
+                                    <a class="nav-link active" data-toggle="tab" href="#review">Reviews {{ count($ratings) }}</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="tab-content">
                             <!-- Description-Tab -->
-                            <div class="tab-pane fade active show" id="video">
+                            {{-- <div class="tab-pane fade active show" id="video">
                                 <div class="description-whole-container">
 
 
@@ -399,68 +399,13 @@
 
 
                                 </div>
-                            </div>
+                            </div> --}}
                             <!-- Description-Tab /- -->
                             <!-- Details-Tab -->
-                            <div class="tab-pane fade" id="detail">
-                                <div class="specification-whole-container">
-                                    <div class="spec-table u-s-m-b-50">
-                                        <h4 class="spec-heading">Product Details</h4>
-                                        <table>
-
-
-
-                                            @php
-                                                $productFilters = \App\Models\ProductsFilter::productFilters(); // Get ALL the (enabled/active) Filters
-                                                // dd($productFilters);
-                                            @endphp
-
-                                            @foreach ($productFilters as $filter) {{-- show ALL the (enabled/active) Filters --}}
-                                                @php
-                                                    // echo '<pre>', var_dump($product), '</pre>';
-                                                    // exit;
-                                                    // echo '<pre>', var_dump($filter), '</pre>';
-                                                    // exit;
-                                                    // dd($filter);
-                                                @endphp
-
-                                                @if (isset($productDetails['category_id'])) {{-- which comes from the AJAX call (passed in through the categoryFilters() method in Admin/FilterController.php, and ALSO may come from the if condition above there (in this page) in case of 'Edit Product' (not 'Add a Product') from addEditProduct() method in Admin/ProductsController --}}
-                                                    @php
-                                                        // dd($filter);
-
-                                                        // Firstly, for every filter in the `products_filters` table, Get the filter's (from the foreach loop) `cat_ids` using filterAvailable() method, then check if the current category id (using the $productDetails['category_id'] variable and depending on the URL) exists in the filter's `cat_ids`. If it exists, then show the filter, if not, then don't show the filter
-                                                        $filterAvailable = \App\Models\ProductsFilter::filterAvailable($filter['id'], $productDetails['category_id']);
-                                                    @endphp
-
-                                                    @if ($filterAvailable == 'Yes') {{-- if the filter has the current productDetails['category_id'] in its `cat_ids` --}}
-
-                                                        <tr>
-                                                            <td>{{ $filter['filter_name'] }}</td>
-                                                            <td>
-                                                                @foreach ($filter['filter_values'] as $value) {{-- show the related values of the filter of the product --}}
-                                                                    @php
-                                                                        // echo '<pre>', var_dump($value), '</pre>'; exit;
-                                                                    @endphp
-                                                                    @if (!empty($productDetails[$filter['filter_column']]) && $productDetails[$filter['filter_column']] == $value['filter_value']) {{-- $value['filter_value'] is like '4GB' --}} {{-- $productDetails[$filter['filter_column']]    is like    $productDetails['screen_size']    which in turn, may be equal to    '5 to 5.4 in' --}}
-                                                                        {{ ucwords($value['filter_value']) }}
-                                                                    @endif
-                                                                @endforeach
-                                                            </td>
-                                                        </tr>
-
-                                                    @endif
-                                                @endif
-                                            @endforeach
-
-
-
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+                        
                             <!-- Specifications-Tab /- -->
                             <!-- Reviews-Tab -->
-                            <div class="tab-pane fade" id="review">
+                            <div class="tab-pane fade active show" id="review">
                                 <div class="review-whole-container">
                                     <div class="row r-1 u-s-m-b-26 u-s-p-b-22">
                                         <div class="col-lg-6 col-md-6">

@@ -34,6 +34,7 @@
                         <th>Ordered Products</th> {{-- We'll display products codes --}}
                         <th>Payment Method</th>
                         <th>Grand Total</th>
+                        <th>Order Status</th>
                         <th>Created on</th>
                         @foreach ($orders as $order)
                             <tr>
@@ -48,6 +49,7 @@
                                 </td>
                                 <td>{{ $order['payment_method'] }}</td>
                                 <td>{{ $order['grand_total'] }}</td>
+                                <td>{{ $order['order_status'] }}</td>
                                 <td>{{ date('Y-m-d h:i:s', strtotime($order['created_at'])) }}</td>
                             </tr>
                         @endforeach
