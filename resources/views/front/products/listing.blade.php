@@ -53,7 +53,7 @@
                 <!-- Shop-Right-Wrapper -->
                 <div class="col-lg-9 col-md-9 col-sm-12">
                     <!-- Page-Bar -->
-                    <div class="page-bar clearfix">
+                    <div class="clearfix page-bar">
 
 
 
@@ -145,7 +145,7 @@
                     <div>&nbsp;</div>
 
                     {{-- Show the category and subcategory description --}} 
-                    <div>{{ $categoryDetails['categoryDetails']['description'] }}</div>
+                    {{-- <div>{{ $categoryDetails['categoryDetails']['description'] }}</div> --}}
 
 
 
